@@ -1,0 +1,8 @@
+
+<div class="products">
+  <div class="product" *ngFor="let product of productsData">
+    <a routerLink="/detail/{{product.productCode}}">
+      <app-product-card class="product-card" [item]="product"></app-product-card>
+    </a>
+  </div>
+</div>

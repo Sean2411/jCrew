@@ -1,0 +1,13 @@
+<div class="product-card">
+  <div class="product-img">
+    <img src="https://www.jcrew.com/s7-img-facade/{{item.productCode}}_{{item.defaultColorCode}}" alt="{{item.productDescription}}"/>
+  </div>
+  <div>
+    <h5>{{item.productDescription}}</h5>
+    <div class="price">
+      <h5 [ngClass]="!!item.now ? 'strike-through' : 'list-price'">{{item.listPrice.formatted}}</h5>
+      <h5 *ngIf="!!item.now" class="now">{{item.now.formatted}}</h5>
+    </div>
+  </div>
+</div>
+

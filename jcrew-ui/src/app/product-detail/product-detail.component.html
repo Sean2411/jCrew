@@ -1,0 +1,25 @@
+<div class="product-detail-container">
+  <div class="product-detail-img-small-wrapper">
+    <img class="product-detail-img-small" src="https://www.jcrew.com/s7-img-facade/{{itemData.productCode}}_{{selectedColorCode}}" alt="{{itemData.productDescription}}">
+  </div>
+  <div class="product-detail-img-wrapper">
+    <img class="product-detail-img" src="https://www.jcrew.com/s7-img-facade/{{itemData.productCode}}_{{selectedColorCode}}" alt="{{itemData.productDescription}}">
+  </div>
+  <div class="product-detail-descriptions">
+    <div class="product-name">
+      <h3 class="name">{{itemData.productDescription}}</h3>
+      <h5 class="sub-name">Item {{itemData.productCode}}</h5>
+    </div>
+
+    <div class="price">
+      <h4 [ngClass]="!!itemData.now ? 'strike-through' : 'list-price'">{{itemData.listPrice.formatted}}</h4>
+      <h4 *ngIf="!!itemData.now" class="now">{{itemData.now.formatted}}</h4>
+    </div>
+    <div class="product-detail-colors">
+      <h5 class="color">Color: {{selectedColorName}}</h5>
+      <img class="product-detail-color-img" *ngFor="let color of itemData.colors; index as i" (click)="onColorClick(i)" src="https://www.jcrew.com/s7-img-facade/{{itemData.productCode}}_{{color.colorCode}}_sw
+        " alt="{{color.colorName}}">
+    </div>
+  </div>
+
+</div>
